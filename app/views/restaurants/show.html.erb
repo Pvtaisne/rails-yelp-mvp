@@ -1,0 +1,30 @@
+
+<h3><%= @restaurant.name %></h2>
+
+<div class="text-center">
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+</div>
+
+<div class="text-center">
+  <% if @restaurant.reviews.any? %>
+    <% @restaurant.reviews.each do |r| %>
+      Review : <%= r.content %>
+     Rate : <%= r.rating %>
+     <% end %>
+     <br>
+     <%= link_to "go back to the list", restaurants_path, class: "btn btn-primary "%>
+
+</div>
+
+
+<% else %>
+  <p>no reviews yet</p>
+<% end %>
+
+
+
+
+
+
